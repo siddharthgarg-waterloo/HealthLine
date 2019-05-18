@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import Onboard
+import Firebase
+import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let firstPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"dummy"), buttonText: nil, action: nil)
+        let secondPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"dummy"), buttonText: nil, action: nil)
+        let thirdPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"dummy"), buttonText: nil, action: nil)
+        thirdPage.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToLogin)))
+        
+        let onboardingVC = OnboardingViewController(backgroundImage: nil, contents: [firstPage, secondPage, thirdPage])
+        
+        self.window?.rootViewController = onboardingVC
+        FirebaseApp.configure()
         return true
     }
 
@@ -39,6 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    @objc private func goToLogin() {
+        self.window?.rootViewController?.present(LoginViewController(), animated: true, completion: nil)
     }
 
 

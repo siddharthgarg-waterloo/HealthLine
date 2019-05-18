@@ -7,21 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3267B5CAA667D3EAB982DA64 /* Pods_dmMD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F15FF4184FE187337571523 /* Pods_dmMD.framework */; };
 		35DCAC5B228FB19600E9E3DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC5A228FB19600E9E3DB /* AppDelegate.swift */; };
-		35DCAC5D228FB19600E9E3DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC5C228FB19600E9E3DB /* ViewController.swift */; };
-		35DCAC60228FB19600E9E3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC5E228FB19600E9E3DB /* Main.storyboard */; };
 		35DCAC62228FB19800E9E3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC61228FB19800E9E3DB /* Assets.xcassets */; };
 		35DCAC65228FB19800E9E3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC63228FB19800E9E3DB /* LaunchScreen.storyboard */; };
+		35DCAC6E228FBED300E9E3DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC6C228FBED300E9E3DB /* LoginViewController.swift */; };
+		35DCAC6F228FBED300E9E3DB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC6D228FBED300E9E3DB /* LoginViewController.xib */; };
+		35DCAC71228FC32C00E9E3DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC70228FC32C00E9E3DB /* GoogleService-Info.plist */; };
+		35DCAC74228FC49900E9E3DB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC72228FC49900E9E3DB /* SignUpViewController.swift */; };
+		35DCAC75228FC49900E9E3DB /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC73228FC49900E9E3DB /* SignUpViewController.xib */; };
+		35DCAC782290227F00E9E3DB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DCAC772290227F00E9E3DB /* HealthKit.framework */; };
+		35DCAC7A229022C600E9E3DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DCAC79229022C600E9E3DB /* MapKit.framework */; };
+		35DCAC7D229022EB00E9E3DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC7B229022EB00E9E3DB /* HomeViewController.swift */; };
+		35DCAC7E229022EB00E9E3DB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC7C229022EB00E9E3DB /* HomeViewController.xib */; };
+		35DCAC812290248700E9E3DB /* NearbyHospitalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC7F2290248700E9E3DB /* NearbyHospitalsViewController.swift */; };
+		35DCAC822290248700E9E3DB /* NearbyHospitalsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC802290248700E9E3DB /* NearbyHospitalsViewController.xib */; };
+		35DCAC8522903F3300E9E3DB /* MedicalRecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC8322903F3300E9E3DB /* MedicalRecordsViewController.swift */; };
+		35DCAC8622903F3300E9E3DB /* MedicalRecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC8422903F3300E9E3DB /* MedicalRecordsViewController.xib */; };
+		35DCAC8D2290766F00E9E3DB /* SendTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */; };
+		35DCAC8E2290766F00E9E3DB /* SendTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0756343DAAFD9B99F00B6002 /* Pods-dmMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmMD.release.xcconfig"; path = "Target Support Files/Pods-dmMD/Pods-dmMD.release.xcconfig"; sourceTree = "<group>"; };
 		35DCAC57228FB19600E9E3DB /* dmMD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dmMD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DCAC5A228FB19600E9E3DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35DCAC5C228FB19600E9E3DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		35DCAC5F228FB19600E9E3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35DCAC61228FB19800E9E3DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DCAC64228FB19800E9E3DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35DCAC66228FB19800E9E3DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35DCAC6C228FBED300E9E3DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		35DCAC6D228FBED300E9E3DB /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		35DCAC70228FC32C00E9E3DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		35DCAC72228FC49900E9E3DB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		35DCAC73228FC49900E9E3DB /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		35DCAC762290227E00E9E3DB /* dmMD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dmMD.entitlements; sourceTree = "<group>"; };
+		35DCAC772290227F00E9E3DB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		35DCAC79229022C600E9E3DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		35DCAC7B229022EB00E9E3DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		35DCAC7C229022EB00E9E3DB /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		35DCAC7F2290248700E9E3DB /* NearbyHospitalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyHospitalsViewController.swift; sourceTree = "<group>"; };
+		35DCAC802290248700E9E3DB /* NearbyHospitalsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearbyHospitalsViewController.xib; sourceTree = "<group>"; };
+		35DCAC8322903F3300E9E3DB /* MedicalRecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalRecordsViewController.swift; sourceTree = "<group>"; };
+		35DCAC8422903F3300E9E3DB /* MedicalRecordsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicalRecordsViewController.xib; sourceTree = "<group>"; };
+		35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTextViewController.swift; sourceTree = "<group>"; };
+		35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendTextViewController.xib; sourceTree = "<group>"; };
+		3F15FF4184FE187337571523 /* Pods_dmMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dmMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26EE933B81BF3E1AA7BFF9F /* Pods-dmMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmMD.debug.xcconfig"; path = "Target Support Files/Pods-dmMD/Pods-dmMD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +60,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3267B5CAA667D3EAB982DA64 /* Pods_dmMD.framework in Frameworks */,
+				35DCAC7A229022C600E9E3DB /* MapKit.framework in Frameworks */,
+				35DCAC782290227F00E9E3DB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24C3A86F6D995B416C76C971 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B26EE933B81BF3E1AA7BFF9F /* Pods-dmMD.debug.xcconfig */,
+				0756343DAAFD9B99F00B6002 /* Pods-dmMD.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		35DCAC4E228FB19600E9E3DB = {
 			isa = PBXGroup;
 			children = (
 				35DCAC59228FB19600E9E3DB /* dmMD */,
 				35DCAC58228FB19600E9E3DB /* Products */,
+				24C3A86F6D995B416C76C971 /* Pods */,
+				5A2E122E8BC459540F1266F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +99,36 @@
 		35DCAC59228FB19600E9E3DB /* dmMD */ = {
 			isa = PBXGroup;
 			children = (
+				35DCAC762290227E00E9E3DB /* dmMD.entitlements */,
+				35DCAC70228FC32C00E9E3DB /* GoogleService-Info.plist */,
 				35DCAC5A228FB19600E9E3DB /* AppDelegate.swift */,
-				35DCAC5C228FB19600E9E3DB /* ViewController.swift */,
-				35DCAC5E228FB19600E9E3DB /* Main.storyboard */,
 				35DCAC61228FB19800E9E3DB /* Assets.xcassets */,
 				35DCAC63228FB19800E9E3DB /* LaunchScreen.storyboard */,
+				35DCAC6C228FBED300E9E3DB /* LoginViewController.swift */,
+				35DCAC6D228FBED300E9E3DB /* LoginViewController.xib */,
+				35DCAC8322903F3300E9E3DB /* MedicalRecordsViewController.swift */,
+				35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */,
+				35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */,
+				35DCAC8422903F3300E9E3DB /* MedicalRecordsViewController.xib */,
+				35DCAC7B229022EB00E9E3DB /* HomeViewController.swift */,
+				35DCAC7C229022EB00E9E3DB /* HomeViewController.xib */,
+				35DCAC7F2290248700E9E3DB /* NearbyHospitalsViewController.swift */,
+				35DCAC802290248700E9E3DB /* NearbyHospitalsViewController.xib */,
+				35DCAC72228FC49900E9E3DB /* SignUpViewController.swift */,
+				35DCAC73228FC49900E9E3DB /* SignUpViewController.xib */,
 				35DCAC66228FB19800E9E3DB /* Info.plist */,
 			);
 			path = dmMD;
+			sourceTree = "<group>";
+		};
+		5A2E122E8BC459540F1266F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35DCAC79229022C600E9E3DB /* MapKit.framework */,
+				35DCAC772290227F00E9E3DB /* HealthKit.framework */,
+				3F15FF4184FE187337571523 /* Pods_dmMD.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35DCAC69228FB19800E9E3DB /* Build configuration list for PBXNativeTarget "dmMD" */;
 			buildPhases = (
+				36A87096840A61B9F09A8890 /* [CP] Check Pods Manifest.lock */,
 				35DCAC53228FB19600E9E3DB /* Sources */,
 				35DCAC54228FB19600E9E3DB /* Frameworks */,
 				35DCAC55228FB19600E9E3DB /* Resources */,
+				44B3206A14B439672CC71E24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +165,14 @@
 				TargetAttributes = {
 					35DCAC56228FB19600E9E3DB = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -122,35 +199,103 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35DCAC75228FC49900E9E3DB /* SignUpViewController.xib in Resources */,
 				35DCAC65228FB19800E9E3DB /* LaunchScreen.storyboard in Resources */,
+				35DCAC8622903F3300E9E3DB /* MedicalRecordsViewController.xib in Resources */,
+				35DCAC71228FC32C00E9E3DB /* GoogleService-Info.plist in Resources */,
 				35DCAC62228FB19800E9E3DB /* Assets.xcassets in Resources */,
-				35DCAC60228FB19600E9E3DB /* Main.storyboard in Resources */,
+				35DCAC6F228FBED300E9E3DB /* LoginViewController.xib in Resources */,
+				35DCAC8E2290766F00E9E3DB /* SendTextViewController.xib in Resources */,
+				35DCAC7E229022EB00E9E3DB /* HomeViewController.xib in Resources */,
+				35DCAC822290248700E9E3DB /* NearbyHospitalsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36A87096840A61B9F09A8890 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dmMD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44B3206A14B439672CC71E24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dmMD/Pods-dmMD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Onboard/Onboard.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Onboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dmMD/Pods-dmMD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		35DCAC53228FB19600E9E3DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35DCAC5D228FB19600E9E3DB /* ViewController.swift in Sources */,
+				35DCAC74228FC49900E9E3DB /* SignUpViewController.swift in Sources */,
+				35DCAC8522903F3300E9E3DB /* MedicalRecordsViewController.swift in Sources */,
+				35DCAC6E228FBED300E9E3DB /* LoginViewController.swift in Sources */,
+				35DCAC812290248700E9E3DB /* NearbyHospitalsViewController.swift in Sources */,
 				35DCAC5B228FB19600E9E3DB /* AppDelegate.swift in Sources */,
+				35DCAC8D2290766F00E9E3DB /* SendTextViewController.swift in Sources */,
+				35DCAC7D229022EB00E9E3DB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		35DCAC5E228FB19600E9E3DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35DCAC5F228FB19600E9E3DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		35DCAC63228FB19800E9E3DB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,8 +425,10 @@
 		};
 		35DCAC6A228FB19800E9E3DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26EE933B81BF3E1AA7BFF9F /* Pods-dmMD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = dmMD/dmMD.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8DJK64U982;
 				INFOPLIST_FILE = dmMD/Info.plist;
@@ -298,8 +445,10 @@
 		};
 		35DCAC6B228FB19800E9E3DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0756343DAAFD9B99F00B6002 /* Pods-dmMD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = dmMD/dmMD.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8DJK64U982;
 				INFOPLIST_FILE = dmMD/Info.plist;

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>752083414518-an2rcd1ppajkvgiriqtm269egpgia53e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.752083414518-an2rcd1ppajkvgiriqtm269egpgia53e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDSfSjk7qqb2bp2w2k9RAxYet2-PzoGH2U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>752083414518</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>RUHacks2019.dmMD</string>
+	<key>PROJECT_ID</key>
+	<string>dmmd-5b460</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dmmd-5b460.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:752083414518:ios:4a2fb3dd2463a593</string>
+	<key>DATABASE_URL</key>
+	<string>https://dmmd-5b460.firebaseio.com</string>
+</dict>
+</plist>
