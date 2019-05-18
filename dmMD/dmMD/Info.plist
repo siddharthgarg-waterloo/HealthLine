@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow camera permission to detect skin rashes</string>
 	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
 	<string>Please allow in order for us to access your medical records and assist you in the best way</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

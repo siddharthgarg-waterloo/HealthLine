@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     @IBAction func signUpComplete(_ sender: Any) {
-        self.present(SendTextViewController(), animated: true, completion: nil)
+        self.present(ScarRecognisitionViewController(), animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

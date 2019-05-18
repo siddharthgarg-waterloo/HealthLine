@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3267B5CAA667D3EAB982DA64 /* Pods_dmMD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F15FF4184FE187337571523 /* Pods_dmMD.framework */; };
+		35A8CC652290A9C700516A67 /* ScarRecognisitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8CC632290A9C700516A67 /* ScarRecognisitionViewController.swift */; };
+		35A8CC662290A9C700516A67 /* ScarRecognisitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A8CC642290A9C700516A67 /* ScarRecognisitionViewController.xib */; };
+		35A8CC682290AA9000516A67 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 35A8CC672290AA9000516A67 /* ImageClassifier.mlmodel */; };
+		35A8CC6A2290AAF500516A67 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8CC692290AAF500516A67 /* Preview.swift */; };
 		35DCAC5B228FB19600E9E3DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC5A228FB19600E9E3DB /* AppDelegate.swift */; };
 		35DCAC62228FB19800E9E3DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC61228FB19800E9E3DB /* Assets.xcassets */; };
 		35DCAC65228FB19800E9E3DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC63228FB19800E9E3DB /* LaunchScreen.storyboard */; };
@@ -30,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		0756343DAAFD9B99F00B6002 /* Pods-dmMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmMD.release.xcconfig"; path = "Target Support Files/Pods-dmMD/Pods-dmMD.release.xcconfig"; sourceTree = "<group>"; };
+		35A8CC632290A9C700516A67 /* ScarRecognisitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarRecognisitionViewController.swift; sourceTree = "<group>"; };
+		35A8CC642290A9C700516A67 /* ScarRecognisitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScarRecognisitionViewController.xib; sourceTree = "<group>"; };
+		35A8CC672290AA9000516A67 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
+		35A8CC692290AAF500516A67 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		35DCAC57228FB19600E9E3DB /* dmMD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dmMD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DCAC5A228FB19600E9E3DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DCAC61228FB19800E9E3DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +89,7 @@
 		35DCAC4E228FB19600E9E3DB = {
 			isa = PBXGroup;
 			children = (
+				35A8CC672290AA9000516A67 /* ImageClassifier.mlmodel */,
 				35DCAC59228FB19600E9E3DB /* dmMD */,
 				35DCAC58228FB19600E9E3DB /* Products */,
 				24C3A86F6D995B416C76C971 /* Pods */,
@@ -106,10 +115,13 @@
 				35DCAC63228FB19800E9E3DB /* LaunchScreen.storyboard */,
 				35DCAC6C228FBED300E9E3DB /* LoginViewController.swift */,
 				35DCAC6D228FBED300E9E3DB /* LoginViewController.xib */,
+				35A8CC692290AAF500516A67 /* Preview.swift */,
 				35DCAC8322903F3300E9E3DB /* MedicalRecordsViewController.swift */,
 				35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */,
 				35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */,
 				35DCAC8422903F3300E9E3DB /* MedicalRecordsViewController.xib */,
+				35A8CC632290A9C700516A67 /* ScarRecognisitionViewController.swift */,
+				35A8CC642290A9C700516A67 /* ScarRecognisitionViewController.xib */,
 				35DCAC7B229022EB00E9E3DB /* HomeViewController.swift */,
 				35DCAC7C229022EB00E9E3DB /* HomeViewController.xib */,
 				35DCAC7F2290248700E9E3DB /* NearbyHospitalsViewController.swift */,
@@ -200,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35DCAC75228FC49900E9E3DB /* SignUpViewController.xib in Resources */,
+				35A8CC662290A9C700516A67 /* ScarRecognisitionViewController.xib in Resources */,
 				35DCAC65228FB19800E9E3DB /* LaunchScreen.storyboard in Resources */,
 				35DCAC8622903F3300E9E3DB /* MedicalRecordsViewController.xib in Resources */,
 				35DCAC71228FC32C00E9E3DB /* GoogleService-Info.plist in Resources */,
@@ -285,10 +298,13 @@
 			files = (
 				35DCAC74228FC49900E9E3DB /* SignUpViewController.swift in Sources */,
 				35DCAC8522903F3300E9E3DB /* MedicalRecordsViewController.swift in Sources */,
+				35A8CC6A2290AAF500516A67 /* Preview.swift in Sources */,
 				35DCAC6E228FBED300E9E3DB /* LoginViewController.swift in Sources */,
 				35DCAC812290248700E9E3DB /* NearbyHospitalsViewController.swift in Sources */,
 				35DCAC5B228FB19600E9E3DB /* AppDelegate.swift in Sources */,
+				35A8CC652290A9C700516A67 /* ScarRecognisitionViewController.swift in Sources */,
 				35DCAC8D2290766F00E9E3DB /* SendTextViewController.swift in Sources */,
+				35A8CC682290AA9000516A67 /* ImageClassifier.mlmodel in Sources */,
 				35DCAC7D229022EB00E9E3DB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
