@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let firstPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"dummy"), buttonText: nil, action: nil)
-        let secondPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"dummy"), buttonText: nil, action: nil)
-        let thirdPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"dummy"), buttonText: nil, action: nil)
+        let firstPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"onboarding1"), buttonText: nil, action: nil)
+        let secondPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"onboarding2"), buttonText: nil, action: nil)
+        let thirdPage = OnboardingContentViewController(title: nil, body: nil, image: UIImage(named:"onboarding3"), buttonText: nil, action: nil)
         thirdPage.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToLogin)))
         
         let onboardingVC = OnboardingViewController(backgroundImage: nil, contents: [firstPage, secondPage, thirdPage])

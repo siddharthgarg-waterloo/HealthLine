@@ -33,6 +33,8 @@
 		35DCAC8622903F3300E9E3DB /* MedicalRecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC8422903F3300E9E3DB /* MedicalRecordsViewController.xib */; };
 		35DCAC8D2290766F00E9E3DB /* SendTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */; };
 		35DCAC8E2290766F00E9E3DB /* SendTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */; };
+		81E47C232290D14B003F5581 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E47C212290D14B003F5581 /* ProfileViewController.swift */; };
+		81E47C242290D14B003F5581 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E47C222290D14B003F5581 /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTextViewController.swift; sourceTree = "<group>"; };
 		35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendTextViewController.xib; sourceTree = "<group>"; };
 		3F15FF4184FE187337571523 /* Pods_dmMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dmMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E47C212290D14B003F5581 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		81E47C222290D14B003F5581 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B26EE933B81BF3E1AA7BFF9F /* Pods-dmMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmMD.debug.xcconfig"; path = "Target Support Files/Pods-dmMD/Pods-dmMD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,8 @@
 				35A8CC712290C6DD00516A67 /* MessageComposer.swift */,
 				35DCAC8322903F3300E9E3DB /* MedicalRecordsViewController.swift */,
 				35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */,
+				81E47C212290D14B003F5581 /* ProfileViewController.swift */,
+				81E47C222290D14B003F5581 /* ProfileViewController.xib */,
 				35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */,
 				35DCAC8422903F3300E9E3DB /* MedicalRecordsViewController.xib */,
 				35A8CC632290A9C700516A67 /* ScarRecognisitionViewController.swift */,
@@ -227,6 +233,7 @@
 				35DCAC65228FB19800E9E3DB /* LaunchScreen.storyboard in Resources */,
 				35DCAC8622903F3300E9E3DB /* MedicalRecordsViewController.xib in Resources */,
 				35DCAC71228FC32C00E9E3DB /* GoogleService-Info.plist in Resources */,
+				81E47C242290D14B003F5581 /* ProfileViewController.xib in Resources */,
 				35DCAC62228FB19800E9E3DB /* Assets.xcassets in Resources */,
 				35DCAC6F228FBED300E9E3DB /* LoginViewController.xib in Resources */,
 				35DCAC8E2290766F00E9E3DB /* SendTextViewController.xib in Resources */,
@@ -315,6 +322,7 @@
 				35DCAC6E228FBED300E9E3DB /* LoginViewController.swift in Sources */,
 				35DCAC812290248700E9E3DB /* NearbyHospitalsViewController.swift in Sources */,
 				35DCAC5B228FB19600E9E3DB /* AppDelegate.swift in Sources */,
+				81E47C232290D14B003F5581 /* ProfileViewController.swift in Sources */,
 				35A8CC652290A9C700516A67 /* ScarRecognisitionViewController.swift in Sources */,
 				35DCAC8D2290766F00E9E3DB /* SendTextViewController.swift in Sources */,
 				35A8CC682290AA9000516A67 /* ImageClassifier.mlmodel in Sources */,
