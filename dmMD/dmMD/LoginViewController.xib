@@ -75,7 +75,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="signInButton:" destination="-1" eventType="touchUpInside" id="G2m-kD-cxh"/>
+                        <action selector="continueButton:" destination="-1" eventType="touchUpInside" id="HRy-xv-BPw"/>
                     </connections>
                 </button>
             </subviews>

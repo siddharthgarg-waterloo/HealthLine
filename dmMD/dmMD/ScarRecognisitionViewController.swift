@@ -7,137 +7,128 @@
 //
 
 import UIKit
-import AVFoundation
+import ARKit
 import CoreML
 import Vision
+import ImageIO
+import Foundation
 
-class ScarRecognisitionViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate  {
+class ScarRecognisitionViewController: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var camScanner: ARSCNView!
     
-    // Session - Initialization
-    private let session = AVCaptureSession()
-    private var isSessionRunning = false
-    private let sessionQueue = DispatchQueue(label: "Camera Session Queue", attributes: [], target: nil)
-    private var permissionGranted = false
+    private var rashInfo = RashIdentifierViewController()
     
-    // ML - Initialization
-    var model: VNCoreMLModel?
+    lazy var config = ARWorldTrackingConfiguration()
+    //private var companyInfo = CompanyInformationViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        // Set some features for PreviewView
-        self.previewView.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        self.previewView.session = session
+        _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true, block: { timer in
+            let image = self.camScanner.snapshot()
+            self.updateClassifications(for: image)
+        })
         
-        // Check for permissions
-        self.checkPermission()
+        camScanner.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        //config.planeDetection = .vertical
+        camScanner.session.run(config)
+        camScanner.delegate = self
+        //        let popUp = SCNPlane(width: 0.1, height: 0.1)
+        //        popUp.firstMaterial?.diffuse.contents = companyInfo.view
+        //        let popUpNode = SCNNode(geometry: popUp)
+        //        popUpNode.position = SCNVector3(0.1, 0.1, -0.1)
+        //        camScanner.scene.rootNode.addChildNode(popUpNode)
         
-        // Configure Session in session queue
-        self.sessionQueue.async { [unowned self] in
-            self.configureSession()
-        }
-        
-        // Load MLModel
-        self.loadModel()
     }
     
-    // Check for camera permissions
-    private func checkPermission() {
-        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
-        case .authorized:
-            self.permissionGranted = true
-        case .notDetermined:
-            self.requestPermission()
-        default:
-            self.permissionGranted = false
-        }
-    }
     
-    // Request permission if not given
-    private func requestPermission() {
-        sessionQueue.suspend()
-        AVCaptureDevice.requestAccess(for: AVMediaType.video) { [unowned self] granted in
-            self.permissionGranted = granted
-            self.sessionQueue.resume()
-        }
-    }
-    
-    // Configure session properties
-    private func configureSession() {
-        guard permissionGranted else { return }
-        
-        self.session.beginConfiguration()
-        self.session.sessionPreset = .hd1280x720
-        
-        guard let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back) else { return }
-        guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
-        guard self.session.canAddInput(captureDeviceInput) else { return }
-        self.session.addInput(captureDeviceInput)
-        
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer"))
-        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String : kCVPixelFormatType_32BGRA]
-        videoOutput.alwaysDiscardsLateVideoFrames = true
-        guard self.session.canAddOutput(videoOutput) else { return }
-        self.session.addOutput(videoOutput)
-        
-        self.session.commitConfiguration()
-        videoOutput.setSampleBufferDelegate(self, queue: sessionQueue)
-    }
-    
-    private func loadModel() {
-        model = try? VNCoreMLModel(for: ImageClassifier().model)
-    }
-    
-    // Start session
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.sessionQueue.async {
-            self.session.startRunning()
-            self.isSessionRunning = self.session.isRunning
-        }
-    }
-    
-    // Stop session
-    override func viewWillDisappear(_ animated: Bool) {
-        self.sessionQueue.async { [unowned self] in
-            if self.permissionGranted {
-                self.session.stopRunning()
-                self.isSessionRunning = self.session.isRunning
-            }
-        }
-        super.viewWillDisappear(animated)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // Do per-image-frame executions here!!!
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        // TODO: Do ML Here
-        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let request = VNCoreMLRequest(model: self.model!) {
-            (finishedReq, err) in
-            guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
-            guard let firstObservation = results.first else { return }
+    /// - Tag: MLModelSetup
+    lazy var classificationRequest: VNCoreMLRequest = {
+        do {
+            /*
+             Use the Swift class `MobileNet` Core ML generates from the model.
+             To use a different Core ML classifier model, add it to the project
+             and replace `MobileNet` with that model's generated Swift class.
+             */
+            let model = try VNCoreMLModel(for: ImageClassifier().model)
             
-            DispatchQueue.main.async {
-                let objectRecognised = firstObservation.identifier
-                let with = " with "
-                let probability = NSString(format: "%.2f", firstObservation.confidence) as String
-                let finalString = objectRecognised + with + probability
-                let utterance = AVSpeechUtterance(string: finalString)
-                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                let synthesizer = AVSpeechSynthesizer()
-                synthesizer.speak(utterance)
+            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                self?.processClassifications(for: request, error: error)
+            })
+            request.imageCropAndScaleOption = .centerCrop
+            return request
+        } catch {
+            fatalError("Failed to load Vision ML model: \(error)")
+        }
+    }()
+    
+    /// - Tag: PerformRequests
+    func updateClassifications(for image: UIImage) {
+        print("Classifying...")
+        
+        guard let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)) else { return }
+        guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+            do {
+                try handler.perform([self.classificationRequest])
+            } catch {
+                /*
+                 This handler catches general image processing errors. The `classificationRequest`'s
+                 completion handler `processClassifications(_:error:)` catches errors specific
+                 to processing that request.
+                 */
+                print("Failed to perform classification.\n\(error.localizedDescription)")
             }
         }
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
     
+    /// Updates the UI with the results of the classification.
+    /// - Tag: ProcessClassifications
+    func processClassifications(for request: VNRequest, error: Error?) {
+        DispatchQueue.main.async {
+            guard let results = request.results else {
+                print("Unable to classify image.\n\(error!.localizedDescription)")
+                return
+            }
+            // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
+            let classifications = results as! [VNClassificationObservation]
+            print("F")
+            if classifications.isEmpty {
+                print("Nothing recognized.")
+            } else {
+                // Display top classifications ranked by confidence in the UI.
+                let topClassifications = classifications.prefix(1)
+                let descriptions = topClassifications.map { classification in
+                    // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
+                    return String(format: "%.2f)%@", classification.confidence, classification.identifier)
+                }
+                print("Classification:\n" + descriptions.joined(separator: "\n"))
+                
+                let confidence = descriptions[0].prefix(3)
+                let title = descriptions[0].dropFirst(5)
+                
+                let data = (String(confidence), String(title))
+                self.determineLogo(typeRash: data)
+            }
+        }
+    }
+    
+    func determineLogo (typeRash: (String, String)) {
+        print("data: ", typeRash)
+        if(Double(typeRash.0)! > 0.85 && typeRash.1 != "logo_none") {
+
+            let popUp = SCNPlane(width: 0.1, height: 0.1)
+            popUp.firstMaterial?.diffuse.contents = rashInfo.view
+            let popUpNode = SCNNode(geometry: popUp)
+            popUpNode.position = SCNVector3(0.1, 0.1, -0.1)
+            camScanner.scene.rootNode.addChildNode(popUpNode)
+
+
+            rashInfo._rashLabel = typeRash.1
+            rashInfo.updateContent()
+        }
+    }
 }
