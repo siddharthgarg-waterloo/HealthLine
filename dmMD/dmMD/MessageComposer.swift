@@ -12,6 +12,8 @@ import MessageUI
 
 class MessageComposer: NSObject, MFMessageComposeViewControllerDelegate {
     
+    var bodyText = ""
+    
     func canSendText() -> Bool {
         return MFMessageComposeViewController.canSendText()
     }
@@ -20,23 +22,17 @@ class MessageComposer: NSObject, MFMessageComposeViewControllerDelegate {
         let messageComposeVC = MFMessageComposeViewController()
         messageComposeVC.messageComposeDelegate = self
         messageComposeVC.recipients = ["+15063062122"]
-        messageComposeVC.body = "Hello! Welcome to Goodburger home of the Goodburger can I take your order"
+        messageComposeVC.body = bodyText
         return messageComposeVC
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        //        switch result {
-        //        case MessageComposeResultCancelled:
-        //            print("Message cancelled by user")
-        //        case MessageComposeResultSent:
-        //            print ("MASS TEXT")
-        //        case MessageComposeResultFailed :
-        //            print ("Failed sending text")
-        //        default:
-        //            print ("📝")
-        //        }
-        
         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    init(textBody: String) {
+        super.init()
+        bodyText = textBody
     }
 
 }

@@ -12,17 +12,42 @@ import SwiftyJSON
 import MessageUI
 import Messages
 
-class SendTextViewController: UIViewController {
+class SendTextViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let messageComposer = MessageComposer()
+    @IBOutlet weak var exitButton: UIButton!
+    let cellIdentifier = "CollectionViewCell"
     
+    @IBOutlet weak var defaultSymptomCollection: UICollectionView!
     
 
+    let defaultSymptoms = ["bloating", "cough", "diarrhea", "dizziness", "fatigue", "fever", "headache", "cramps",
+    "nausea", "sweating"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaultSymptomCollection.allowsMultipleSelection = true
+        defaultSymptomCollection.delegate = self
+        defaultSymptomCollection.dataSource = self
+        let nibCell = UINib(nibName: cellIdentifier, bundle: nil)
+        defaultSymptomCollection.register(nibCell, forCellWithReuseIdentifier: cellIdentifier)
+        exitButton.layer.cornerRadius = 15
+        exitButton.clipsToBounds = true
+        exitButton.addTarget(self, action: #selector(exitSymptoms), for: .touchUpInside)
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return defaultSymptoms.count
     }
     
     @IBAction func sendText(_ sender: Any) {
+        let gender = ""
+        let age = ""
+        
+        let messageComposer = MessageComposer(textBody: "hey")
         
         // Make sure the device can send text messages
         if (messageComposer.canSendText()) {
@@ -41,22 +66,35 @@ class SendTextViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
-        
-//        let headers = [
-//            "Content-Type": "application/x-www-form-urlencoded"
-//        ]
-//
-//        let parameters: Parameters = [
-//            "To": "+15063062122",
-//            "Body": "Hey"
-//        ]
-//
-//        Alamofire.request("https://12809c08.ngrok.io/sms", method: .post, parameters: parameters, headers: headers).responseString { response in
-//            if let result = response.result.value {
-//                let json = JSON(result)
-//                print(json["url"])
-//                print(json["explanation"])
-//            }
-//        }
-//
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CollectionViewCell
+        cell.symptomTitle.text = defaultSymptoms[indexPath.row]
+        cell.symptomTitle.textColor = UIColor.lightGray
+        cell.symptomTitle.textAlignment = .center
+        cell.layer.cornerRadius = 15
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 175, height: 45)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell
+        if (collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false) {
+            cell?.backgroundColor = UIColor.white
+            cell?.symptomTitle.textColor = UIColor.lightGray
+        } else {
+            cell?.backgroundColor = UIColor.blue
+            cell?.symptomTitle.textColor = UIColor.white
+        }
+    }
+    
+    @objc private func exitSymptoms() {
+        self.present(ScarRecognisitionViewController(), animated: true, completion: nil)
+    }
+    
 }

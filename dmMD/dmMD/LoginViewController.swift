@@ -21,13 +21,8 @@ class LoginViewController: UIViewController {
     
     
     
-    @IBAction func signInButton(_ sender: Any) {
-    }
-    
-    
-    
-    @IBAction func signUpButton(_ sender: Any) {
-        self.present(SignUpViewController(), animated: true, completion: nil)
+    @IBAction func continueButton(_ sender: Any) {
+        self.present(SendTextViewController(), animated: true, completion: nil)
     }
     
     
