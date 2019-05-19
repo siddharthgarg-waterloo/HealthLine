@@ -84,13 +84,8 @@ class SendTextViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell
-        if (collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false) {
-            cell?.backgroundColor = UIColor.white
-            cell?.symptomTitle.textColor = UIColor.lightGray
-        } else {
-            cell?.backgroundColor = UIColor.blue
-            cell?.symptomTitle.textColor = UIColor.white
-        }
+        cell?.backgroundColor = UIColor(red:0.22, green:0.45, blue:0.97, alpha:1.0)
+        cell?.symptomTitle.textColor = UIColor.white
     }
     
     @objc private func exitSymptoms() {
