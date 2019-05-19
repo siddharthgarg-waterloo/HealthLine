@@ -17,6 +17,15 @@ class ScarRecognisitionViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var camScanner: ARSCNView!
     
+    @IBAction func askHelpSymptom(_ sender: Any) {
+        self.present(SendTextViewController(), animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func viewRecordsButton(_ sender: Any) {
+        self.present(MedicalRecordsViewController(), animated: true, completion: nil)
+    }
+    
     private var rashInfo = RashIdentifierViewController()
     
     lazy var config = ARWorldTrackingConfiguration()
