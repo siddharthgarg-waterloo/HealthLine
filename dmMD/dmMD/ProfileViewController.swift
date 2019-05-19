@@ -10,13 +10,26 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var phoneNumberField: UITextField!
+    @IBOutlet weak var PINField: UITextField!
+    @IBOutlet weak var ageField: UITextField!
+    @IBOutlet weak var genderField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func doneBtnPressed(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "hasSignedUp")
+        UserDefaults.standard.setValue(phoneNumberField.text ?? "", forKey: "phoneNumber")
+        UserDefaults.standard.setValue(PINField.text ?? "", forKey: "PIN")
+        UserDefaults.standard.setValue(ageField.text ?? "", forKey: "age")
+        UserDefaults.standard.setValue(genderField.text ?? "", forKey: "gender")
+        self.present(SendTextViewController(), animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
