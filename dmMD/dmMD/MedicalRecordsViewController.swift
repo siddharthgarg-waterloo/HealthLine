@@ -9,7 +9,7 @@
 import UIKit
 import HealthKit
 
-class MedicalRecordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CollapasableTableViewHeaderDelegate {
+class MedicalRecordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CollapsibleTableViewHeaderDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func goToAr(_ sender: Any) {
@@ -84,8 +84,8 @@ class MedicalRecordsViewController: UIViewController, UITableViewDelegate, UITab
     
     // Cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CollapasableTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CollapasableTableViewCell ??
-            CollapasableTableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell:     CollapsibleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CollapsibleTableViewCell ??
+                CollapsibleTableViewCell(style: .default, reuseIdentifier: "cell")
         
         let item: Item = sections[indexPath.section].items[indexPath.row]
         
@@ -101,7 +101,7 @@ class MedicalRecordsViewController: UIViewController, UITableViewDelegate, UITab
     
     // Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapasableTableViewHeader ?? CollapasableTableViewHeader(reuseIdentifier: "header")
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? CollapsibleTableViewHeader ??     CollapsibleTableViewHeader(reuseIdentifier: "header")
         
         header.titleLabel.text = sections[section].name
         header.arrowLabel.text = ">"
@@ -121,7 +121,7 @@ class MedicalRecordsViewController: UIViewController, UITableViewDelegate, UITab
         return 1.0
     }
     
-    func toggleSection(_ header: CollapasableTableViewHeader, section: Int) {
+    func toggleSection(_ header: CollapsibleTableViewHeader, section: Int) {
         let collapsed = !sections[section].collapsed
         
         // Toggle collapse

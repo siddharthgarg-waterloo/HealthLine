@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let onboardingVC = OnboardingViewController(backgroundImage: nil, contents: [firstPage, secondPage, thirdPage])
         
+        //self.window?.rootViewController = onboardingVC
+        
         self.window?.rootViewController = onboardingVC
         FirebaseApp.configure()
         return true
@@ -57,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     @objc private func goToLogin() {
-        self.window?.rootViewController?.present(LoginViewController(), animated: true, completion: nil)
+        self.window?.rootViewController?.present(MedicalRecordsViewController(), animated: true, completion: nil)
     }
 
 

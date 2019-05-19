@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MedicalRecordsViewController" customModule="dmMD" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="dyH-Gz-5uC" id="sbz-dS-hDi"/>
+                <outlet property="view" destination="jQn-lz-x1M" id="DAg-3Q-jFK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
