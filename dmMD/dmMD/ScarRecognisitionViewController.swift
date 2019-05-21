@@ -15,8 +15,9 @@ import Firebase
 
 class ScarRecognisitionViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    @IBOutlet weak var previewView: Preview!
     
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var previewView: Preview!
     
     @IBAction func askHelpSymptom(_ sender: Any) {
         self.present(SendTextViewController(), animated: true, completion: nil)
@@ -51,6 +52,7 @@ class ScarRecognisitionViewController: UIViewController, AVCaptureVideoDataOutpu
         self.sessionQueue.async { [unowned self] in
             self.configureSession()
         }
+        
         // Load MLModel
         self.loadModel()
     }
@@ -142,7 +144,14 @@ class ScarRecognisitionViewController: UIViewController, AVCaptureVideoDataOutpu
                 let with = " with "
                 let probability = NSString(format: "%.2f", firstObservation.confidence) as String
                 let finalString = objectRecognised + with + probability
-                print(finalString)
+                self.label.text = finalString
+                
+                
+                
+//                let utterance = AVSpeechUtterance(string: finalString)
+//                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+//                let synthesizer = AVSpeechSynthesizer()
+//                synthesizer.speak(utterance)
             }
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])

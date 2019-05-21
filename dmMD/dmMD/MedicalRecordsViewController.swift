@@ -20,6 +20,10 @@ class MedicalRecordsViewController: UIViewController, UITableViewDelegate, UITab
         present(SendTextViewController(), animated: true, completion: nil)
     }
     
+    @IBAction func goToMaps(_ sender: Any) {
+        present(NearbyHospitalsViewController(), animated: true, completion: nil)
+    }
+    
     static let healthStore = HKHealthStore()
     
     var sections = sectionsData
@@ -90,7 +94,7 @@ class MedicalRecordsViewController: UIViewController, UITableViewDelegate, UITab
         let item: Item = sections[indexPath.section].items[indexPath.row]
         
         cell.nameLabel.text = item.name
-        cell.detailLabel.text = item.detail
+        cell.detailLabel.text = item.details
         
         return cell
     }

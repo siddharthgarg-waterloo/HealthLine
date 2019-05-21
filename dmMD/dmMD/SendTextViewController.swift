@@ -16,12 +16,14 @@ class SendTextViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var exitButton: UIButton!
     let cellIdentifier = "CollectionViewCell"
+    let messageComposer = MessageComposer()
     
     @IBOutlet weak var defaultSymptomCollection: UICollectionView!
     
-
-    let defaultSymptoms = ["bloating", "cough", "diarrhea", "dizziness", "fatigue", "fever", "headache", "cramps",
-    "nausea", "sweating"]
+    var defaultSymptoms = ["bloating", "cough", "diarrhea", "dizziness", "fatigue", "fever", "headache", "cramps",
+                   "nausea", "sweating"]
+    var arrSelectedIndex = [IndexPath]() // This is selected cell Index array
+    var arrSelectedData = [String]() // This is selected cell data array
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +46,31 @@ class SendTextViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     @IBAction func sendText(_ sender: Any) {
-        let gender = ""
-        let age = ""
+//        let number = UserDefaults.standard.object(forKey: "phoneNumber") as! String
+//        let gender = UserDefaults.standard.object(forKey: "gender") as! String
+//        let age = UserDefaults.standard.object(forKey: "age") as! String
         
-        let messageComposer = MessageComposer(textBody: "hey")
+        let number = "+12268993621"
+        let gender = "m"
+        let age = "18"
+        
+//        let selectedSymptoms = defaultSymptomCollection.indexPathsForSelectedItems as! [IndexPath]
+//        var symptomString = ""
+//
+//        var dummy = 0
+//        for path in selectedSymptoms {
+//            let cell = defaultSymptomCollection?.cellForItem(at: path) as! CollectionViewCell
+//            if (dummy == 0) {
+//                symptomString = cell.symptomTitle.text ?? ""
+//                dummy += 1
+//            } else {
+//                symptomString = symptomString + " "
+//                symptomString = cell.symptomTitle.text ?? ""
+//            }
+//        }
+        
+        
+        let finalString = number + " " + gender + " " + age + " " + "headache fever cough"
         
         // Make sure the device can send text messages
         if (messageComposer.canSendText()) {

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MessageUI
 
-class MessageComposer: NSObject, MFMessageComposeViewControllerDelegate {
+class MessageComposer: UIViewController, MFMessageComposeViewControllerDelegate {
     
     var bodyText = ""
     
@@ -22,7 +22,7 @@ class MessageComposer: NSObject, MFMessageComposeViewControllerDelegate {
         let messageComposeVC = MFMessageComposeViewController()
         messageComposeVC.messageComposeDelegate = self
         messageComposeVC.recipients = ["+15063062122"]
-        messageComposeVC.body = bodyText
+        messageComposeVC.body = "+12268993621 m 18 fever headache cough"
         return messageComposeVC
     }
     
@@ -30,9 +30,4 @@ class MessageComposer: NSObject, MFMessageComposeViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
     
-    init(textBody: String) {
-        super.init()
-        bodyText = textBody
-    }
-
 }

@@ -10,7 +10,6 @@
 		3267B5CAA667D3EAB982DA64 /* Pods_dmMD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F15FF4184FE187337571523 /* Pods_dmMD.framework */; };
 		35A8CC652290A9C700516A67 /* ScarRecognisitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8CC632290A9C700516A67 /* ScarRecognisitionViewController.swift */; };
 		35A8CC662290A9C700516A67 /* ScarRecognisitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A8CC642290A9C700516A67 /* ScarRecognisitionViewController.xib */; };
-		35A8CC682290AA9000516A67 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 35A8CC672290AA9000516A67 /* ImageClassifier.mlmodel */; };
 		35A8CC6C2290B4AB00516A67 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A8CC6B2290B4AB00516A67 /* Alamofire.framework */; };
 		35A8CC702290C35B00516A67 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A8CC6F2290C35B00516A67 /* Messages.framework */; };
 		35A8CC722290C6DD00516A67 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8CC712290C6DD00516A67 /* MessageComposer.swift */; };
@@ -40,6 +39,7 @@
 		35DCAC8622903F3300E9E3DB /* MedicalRecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC8422903F3300E9E3DB /* MedicalRecordsViewController.xib */; };
 		35DCAC8D2290766F00E9E3DB /* SendTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */; };
 		35DCAC8E2290766F00E9E3DB /* SendTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */; };
+		812A0F3122919EDB00374F3C /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 812A0F3022919EDB00374F3C /* ImageClassifier.mlmodel */; };
 		81E47C232290D14B003F5581 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E47C212290D14B003F5581 /* ProfileViewController.swift */; };
 		81E47C242290D14B003F5581 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E47C222290D14B003F5581 /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
@@ -48,7 +48,6 @@
 		0756343DAAFD9B99F00B6002 /* Pods-dmMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmMD.release.xcconfig"; path = "Target Support Files/Pods-dmMD/Pods-dmMD.release.xcconfig"; sourceTree = "<group>"; };
 		35A8CC632290A9C700516A67 /* ScarRecognisitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarRecognisitionViewController.swift; sourceTree = "<group>"; };
 		35A8CC642290A9C700516A67 /* ScarRecognisitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScarRecognisitionViewController.xib; sourceTree = "<group>"; };
-		35A8CC672290AA9000516A67 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		35A8CC6B2290B4AB00516A67 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A8CC6F2290C35B00516A67 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		35A8CC712290C6DD00516A67 /* MessageComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		35DCAC8B2290766F00E9E3DB /* SendTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTextViewController.swift; sourceTree = "<group>"; };
 		35DCAC8C2290766F00E9E3DB /* SendTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendTextViewController.xib; sourceTree = "<group>"; };
 		3F15FF4184FE187337571523 /* Pods_dmMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dmMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		812A0F3022919EDB00374F3C /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 		81E47C212290D14B003F5581 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		81E47C222290D14B003F5581 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B26EE933B81BF3E1AA7BFF9F /* Pods-dmMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dmMD.debug.xcconfig"; path = "Target Support Files/Pods-dmMD/Pods-dmMD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		35DCAC4E228FB19600E9E3DB = {
 			isa = PBXGroup;
 			children = (
-				35A8CC672290AA9000516A67 /* ImageClassifier.mlmodel */,
+				812A0F3022919EDB00374F3C /* ImageClassifier.mlmodel */,
 				35DCAC59228FB19600E9E3DB /* dmMD */,
 				35DCAC58228FB19600E9E3DB /* Products */,
 				24C3A86F6D995B416C76C971 /* Pods */,
@@ -344,6 +344,7 @@
 				35A8CC8F2291927400516A67 /* CollapsibleTableViewHeader.swift in Sources */,
 				35DCAC8522903F3300E9E3DB /* MedicalRecordsViewController.swift in Sources */,
 				35DCAC6E228FBED300E9E3DB /* LoginViewController.swift in Sources */,
+				812A0F3122919EDB00374F3C /* ImageClassifier.mlmodel in Sources */,
 				35A8CC8A22918FFC00516A67 /* Preview.swift in Sources */,
 				35DCAC812290248700E9E3DB /* NearbyHospitalsViewController.swift in Sources */,
 				35DCAC5B228FB19600E9E3DB /* AppDelegate.swift in Sources */,
@@ -351,7 +352,6 @@
 				35A8CC652290A9C700516A67 /* ScarRecognisitionViewController.swift in Sources */,
 				35A8CC7D2290F59700516A67 /* CollectionViewCell.swift in Sources */,
 				35DCAC8D2290766F00E9E3DB /* SendTextViewController.swift in Sources */,
-				35A8CC682290AA9000516A67 /* ImageClassifier.mlmodel in Sources */,
 				35DCAC7D229022EB00E9E3DB /* HomeViewController.swift in Sources */,
 				35A8CC722290C6DD00516A67 /* MessageComposer.swift in Sources */,
 				35A8CC8E2291927400516A67 /* ExampleData.swift in Sources */,

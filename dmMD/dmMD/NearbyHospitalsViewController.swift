@@ -11,6 +11,10 @@ import MapKit
 
 class NearbyHospitalsViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBAction func goToSomewhere(_ sender: Any) {
+        self.present(MedicalRecordsViewController(), animated: true, completion: nil)
+    }
+    
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     
