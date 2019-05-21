@@ -1,5 +1,7 @@
 # HealthLine
 
+![](https://ibb.co/1b5djSD)
+
 ## Project Description
 
 HealthLine is an iOS application that allows people to message out their symptoms via SMS and find out what illnesses they have and seek treatment options without the need for internet by using Twilio's SMS API.
