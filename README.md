@@ -1,6 +1,6 @@
 # HealthLine
 
-![image](https://ibb.co/1b5djSD)
+![image](https://drive.google.com/file/d/15UG4GMgq8m7akcq4mPgKD8ddt3n4jDLl/view?usp=sharing)
 
 ## Project Description
 
