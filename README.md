@@ -1,7 +1,6 @@
 # HealthLine
 
-<img src="https://ibb.co/1b5djSD">
-![](https://ibb.co/1b5djSD)
+![image](https://ibb.co/1b5djSD)
 
 ## Project Description
 
