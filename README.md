@@ -1,6 +1,6 @@
 # HealthLine
 
-![image](https://i.ibb.co/52ynw7N/74fad8dscreen-shot-2019-05-19-at-2-52-37-am.png)
+![image](http://u.cubeupload.com/coding_ninja24/mergefromofoct1.jpg)
 
 ## Project Description
 
