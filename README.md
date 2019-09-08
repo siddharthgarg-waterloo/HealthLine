@@ -32,6 +32,6 @@ Users such as those living in third world countries can make use of this project
 
 **Server Connection** - Python/Twilio integration
 
-## What's next for BlindSight
+## What's next for HealthLine
 
 **Android App** - to increase user base
