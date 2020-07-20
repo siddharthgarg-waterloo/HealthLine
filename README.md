@@ -1,6 +1,6 @@
 # HealthLine
 
-![image](http://u.cubeupload.com/coding_ninja24/mergefromofoct1.jpg)
+![HealthLine](/resources/healthline-cover.png?raw=true"HealthLine")
 
 ## Project Description
 
